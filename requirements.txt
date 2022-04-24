@@ -1,9 +1,6 @@
-dash==1.16.2
 pandas
-plotly==4.10.0
-gunicorn==20.0.4
+dash
 dash_bootstrap_components==0.10.6
+matplotlib
 scipy
-pickle
-joblib==0.16.0
-scikit-learn
+sklearn
