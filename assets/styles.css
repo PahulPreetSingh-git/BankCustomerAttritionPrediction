@@ -1,0 +1,125 @@
+html,body{
+    overflow-x: hidden;
+}
+
+#mainContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0% 2%;
+  }
+
+.cover {
+    /* background-color: #272953; */
+    text-align: center;
+    /* background-image: url("cover.png"); */
+    background-color: #16103a;
+    background-size: 110%;
+    background-position: center;
+    background-repeat: repeat-x;
+}
+
+.footer {
+    text-align: center;
+    /* background-color: #16103a; */
+    color: rgba(190, 190, 190, 0.75);
+    margin: 2rem 0rem;
+}
+
+.customer-img {
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0vh;
+    height: 51vh;
+}
+.btn-predict {
+    background-color: #c1372a;
+}
+
+.result-card {
+    background-color: #16103a;
+    /* color: #ef563ba9; */
+    text-align: center;
+}
+
+.form-control {
+    background-color: #16103a;
+    color: #e0e1e6;
+}
+
+.card-padding-modelAnalysis {
+    padding: 5px 10px ;
+}
+
+
+/* ----------- */
+@media (max-width: 768px) {
+    .col-sm-12 {
+        padding-bottom: 20px;
+    }
+
+    .card-padding {
+        padding-bottom: 4vh;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .feature-row {
+        padding-bottom: 4vh;
+    }
+
+}
+
+.bg-primary {
+    background-color: #272953 !important;
+}
+
+body {
+  background-color: #16103a;
+}
+
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1340px !important;
+}
+
+.card-body {
+    padding: 0.75rem;
+    /*background-color: #272953; */
+}
+
+.custom-select-new {
+    background-color: #16103a;
+    color: #e0e1e6;
+}
+
+.nav-tabs .nav-link {
+    color: #e0e1e6 !important;
+    border:none !important;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    border-bottom: none;
+}
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    background-color: #272953;
+    border:none;
+
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    background-color: #34c9547c !important;
+    border:none;
+}
+
+.nav-tabs .nav-item {
+    margin-inline: 5px;
+}

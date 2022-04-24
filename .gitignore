@@ -1,0 +1,4 @@
+DashTestEnv 
+*.pyc 
+.env 
+.DS_Store
