@@ -2,5 +2,5 @@ pandas
 dash
 dash_bootstrap_components==0.10.6
 matplotlib
-scipy
 sklearn
+gunicorn
