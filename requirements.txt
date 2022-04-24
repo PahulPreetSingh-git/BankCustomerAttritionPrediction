@@ -4,3 +4,4 @@ dash_bootstrap_components==0.10.6
 matplotlib
 sklearn
 gunicorn
+install xgboost==1.2.1
