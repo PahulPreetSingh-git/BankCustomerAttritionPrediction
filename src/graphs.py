@@ -1,6 +1,3 @@
-from ctypes.wintypes import RGB
-from turtle import fillcolor
-from matplotlib.colors import rgb2hex
 import pandas as pd
 import copy
 import plotly.figure_factory as ff

@@ -3,7 +3,6 @@ import dash
 from dash import Dash, dcc, html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
-import matplotlib as plt
 import copy
 from dash import no_update
 

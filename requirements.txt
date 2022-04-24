@@ -1,7 +1,6 @@
 pandas
 dash
 dash_bootstrap_components==0.10.6
-matplotlib
 sklearn
 gunicorn
 xgboost==1.2.1
