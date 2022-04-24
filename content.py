@@ -1,4 +1,6 @@
-from turtle import width
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 import dash_bootstrap_components as dbc
 from dash import html
 from dash import dcc
