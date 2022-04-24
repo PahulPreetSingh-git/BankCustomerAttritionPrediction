@@ -3,6 +3,7 @@ pandas
 plotly==4.10.0
 gunicorn==20.0.4
 dash_bootstrap_components==0.10.6
-scipy==1.5.2
+scipy
 pickle
 joblib==0.16.0
+scikit-learn
