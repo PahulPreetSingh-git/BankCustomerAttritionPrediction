@@ -1,6 +1,5 @@
 import matplotlib
 matplotlib.use('Agg')
-import matplotlib.pyplot as plt
 import dash_bootstrap_components as dbc
 from dash import html
 from dash import dcc
@@ -213,7 +212,7 @@ tab_dataAnalysis_features = html.Div(
                                 {"label": "Has Credit Card", "value": "HasCrCard"},
                                 {"label": "Is Active", "value": "IsActiveMember"},
                                 {"label": "Number of Products", "value": "NumOfProducts"},
-                            ], id = "categorical_dropdown", value="Gender",
+                            ], id = "categorical_dropdown", value="Geography",
                         ),
                     ],),
                     dbc.Card(
@@ -253,6 +252,7 @@ tab_dataAnalysis_features = html.Div(
                                     {"label": "Balance", "value": "Balance"},
                                     {"label": "Estimated Salary", "value": "EstimatedSalary"},
                                     {"label": "Age", "value": "Age"},
+                                    {"label": "Tenure", "value": "Tenure"},
                                 ], id = "numerical_dropdown", value="CreditScore",
                             ),
                         ],),
