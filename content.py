@@ -6,6 +6,22 @@ from dash import dcc
 import dash_html_components as html
 from matplotlib.pyplot import margins
 
+card_pie = dbc.Card(
+    [
+        dbc.CardBody(
+            [
+                dbc.Spinner(size="md",color="light",
+                    children=[
+                        dcc.Graph(id="categorical_cut_pie_graph", config = {"displayModeBar": False}, style = {"height": "48vh"})
+                    ]
+                ),
+                
+            ],
+        ),
+    ],
+    style = {"background-color": "#16103a"}
+)
+
 card_donut = dbc.Card(
     [
         dbc.CardBody(
@@ -219,11 +235,12 @@ tab_dataAnalysis_features = html.Div(
                             dbc.CardBody(
                                 [
                                     dbc.Row([
-                                        dbc.Col([
-                                                html.Div([
-                                                    html.Img(src="../assets/HeadExit.jpg", className="customer-img")
-                                                ],),
-                                        ], lg=4, sm=12,),
+                                        # dbc.Col([
+                                        #         html.Div([
+                                        #             html.Img(src="../assets/HeadExit.jpg", className="customer-img")
+                                        #         ],),
+                                        # ], lg=4, sm=12,),
+                                        dbc.Col(card_pie, lg="4", sm=12),
                                         dbc.Col(card_donut, lg="4", sm=12),
                                         dbc.Col(card_barChart, lg="4", sm=12),
                     ]),

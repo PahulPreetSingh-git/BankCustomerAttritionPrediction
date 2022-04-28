@@ -298,7 +298,6 @@ def sensitivityResult(feature):
     else:
         return xgb_sensitivity
 
-
 def specificityResult(feature):
     if feature=='lr':
         return lr_specificity

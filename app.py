@@ -13,6 +13,7 @@ from src.graphs import df,layout,dist_plot,box_plot, scatter_plot, continuous_va
 from src.graphs import df,layout,dist_plot,box_plot, scatter_plot,roc_plot,featureImportance_plot,accuracyResult,sensitivityResult,specificityResult,f1Result,aucResult
 
 import plotly.express as px
+import plotly.graph_objects as go
 from content import tab_prediction_features,tab_dataAnalysis_features,tab_modelAnalysis_features,tab_prediction_content
 import time
 import numpy as np
@@ -66,6 +67,44 @@ app.layout = html.Div([
 # callbacks
 
 @app.callback(
+    Output("categorical_cut_pie_graph", "figure"),
+    [
+        Input("categorical_dropdown", "value"),
+    ],
+)
+
+def pie_categorical(feature):
+
+    feature = 'Exited'
+    temp = df.groupby([feature]).count()['Age'].reset_index()
+    temp.loc[temp.Exited == 0, 'Exited'] = "NoChurn"
+    temp.loc[temp.Exited == 1, 'Exited'] = "Churn"
+
+    labels = list(temp['Exited'])
+    values = list(temp['Age'])
+
+    fig = go.Figure(data=[go.Pie(labels=labels, values=values, pull=[0.2, 0])])
+
+    # fig = px.pie(temp, values="Exited", names=feature, hole=.5)
+
+    layout_count = copy.deepcopy(layout)
+    fig.update_layout(layout_count)
+    
+    _title = (feature[0].upper() + feature[1:]) + " Percentage"
+
+    if(df[feature].nunique() == 2):
+        _x = 0.25
+    else:
+        _x = 0
+
+    fig.update_layout(
+        title = {'text': _title, 'x': 0.5},
+        legend = {'x': _x}
+    )
+
+    return fig
+
+@app.callback(
     Output("categorical_pie_graph", "figure"),
     [
         Input("categorical_dropdown", "value"),
@@ -89,6 +128,8 @@ def donut_categorical(feature):
         _x = 0.3
     elif(df[feature].nunique() == 3):
         _x = 0.16
+    elif(df[feature].nunique() == 4):
+        _x = 0.20
     else:
         _x = 0
 
@@ -328,7 +369,6 @@ def updateSpecificity(feature):
 def updateF1(feature):
     time.sleep(0.2)
     return f"{round(f1Result(feature),3)}"
-
 
 @app.callback(
     Output("auc", "children"),
